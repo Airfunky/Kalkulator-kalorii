@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator kalorii</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        function obliczKal(){
+            let typ = document.getElementById("typ").value;
+            let lukier = document.getElementById("lukier");
+            let nadzienie = document.getElementById("nadzieniex2");
+            let ilosc = document.getElementById("ilosc").value;
+
+            let wynik = document.getElementById("wynik");
+            let kalorie = 0;
+
+            
+
+            if(lukier.checked) kalorie += 100
+            else kalorie += 0;
+
+            if(nadzienie.checked) kalorie += 200
+            else kalorie += 0;
+
+
+            
+         kalorie += Number(typ);
+          kalorie *= ilosc;
+
+            if(kalorie<2000) wynik.innerHTML = "SMACZNEGO ZJADASZ" + ' ' + kalorie + "KCAL"
+            else wynik.innerHTML = "TY TŁUŚCIOCHU! ZJADASZ" + ' ' +  kalorie + "KCAL"
+
+            
+
+
+            
+
+        }
+    </script>
+</head>
+<body>
+    <h1>🍩🍩Tłusty Czwartek🍩🍩</h1>
+<div class="container">
+    <label for="typ">Wybierz smak</label>
+    <select id="typ">
+        <option value="500">Dubej chocolate</option>
+        <option value="400">czekoladowy</option>
+        <option value="350">rozany</option>
+    </select>
+<br>
+    <label for="Lukier">Lukier</label>
+    <input type="checkbox" id="lukier">
+<br>
+    <label for="nadzieniex2">NadzienieX2</label>
+    <input type="checkbox" id="nadzieniex2">
+<br><br>
+    <label for="ilosc">Ilosc pączków</label>
+    <input type="number" id="ilosc">
+<br><br>
+    <button onclick="obliczKal()">Wyślij</button >
+
+<p id="wynik"></p>
+</div>
+<footer>Wykonał: Lorenzo Banachewicz</footer>
+</body>
+</html>
